@@ -7,5 +7,5 @@ class BadPlace(Exception):
 class BadTime(Exception):
     pass
 
-class BadPeople(Exception):
+class NoPerson(Exception):
     pass

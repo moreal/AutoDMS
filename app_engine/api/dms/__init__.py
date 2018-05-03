@@ -12,7 +12,7 @@ def login(id, pw):
     status_code = resp.status_code
     content = resp.text
     
-    if not status_code is 200:
+    if status_code is not 200:
         raise BadLogin()
     
     data = json.loads(content)
@@ -55,7 +55,7 @@ def applyExtension(id, pw, class_num, seat_num, time):
         raise BadPlace()
 
     resp = requests.post(f"http://dms.istruly.sexy/extension/{time}", 
-                         headers={"Authorization": "JWT "+access_token},
+                         headers={"Authorization": "JWT " + access_token},
                          data={"seat_num": str(seat_num), "class_num": str(class_num)})
 
     status_code = resp.status_code
@@ -66,6 +66,6 @@ def getExtensionPlaceByName(name, time=12):
     for class_num in range(1,8):
         maps = getExtensionMaps(class_num, time)
         for seat_num, _name in enumerate(maps):
-            if _name == name:
+            if _name is name:
                 return class_num, seat_num
-    return -1, False
+    raise NoPerson()
