@@ -1,0 +1,68 @@
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+body {
+    background-color: black;
+    overflow: hidden;
+
+    font-family: 'Jeju Gothic', serif;
+    font-weight: bold;
+}
+
+#autodms-app {
+    width: 40vw;
+    height: 60vh;
+
+    margin: 30vh 30vw 10vh 30vw;
+    
+    border: 1px solid black;
+}
+
+#autodms-title {
+    font-size: 3vmax;
+    font-weight: lighter;
+
+    color: white;
+
+    margin: 0 0 5% 0;
+
+    text-align: center;
+}
+
+form {
+    margin: 0 30% 0 30%;
+    display: block;
+    color: white;
+}
+
+input[type=text], button {
+    font-size: 1.2vmin;
+    width: 70%;
+    margin: 2% 15%; 
+    padding: 1vmin;
+
+    border-radius: 10px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    border: none;
+    
+    font-family: 'Jeju Gothic', serif;
+    resize: none;
+}
+
+input[type=check] {
+    background-color: white;
+}
+
+#apply-btn {
+    width: 30%;
+    margin: 5% 40%;
+    
+    background-color: #1791ee;
+    color: white;
+}
+
+#checkbox {
+    width: 70%;
+    text-align: center;
+    padding: 1vmin;
+    margin: 0 15%;
+}
