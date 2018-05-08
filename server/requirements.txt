@@ -1,0 +1,4 @@
+Flask==0.12.2
+flask-restful==0.3.6
+google-cloud-datastore==1.6.0
+google-compute-engine
