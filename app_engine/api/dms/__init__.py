@@ -37,11 +37,17 @@ def getExtensionMaps(class_num, time):
         content = requests.get(f"http://dms.istruly.sexy/extension/map/{time}?class_num={class_num}").text
         datas = json.loads(content) 
         maps = list(filter(lambda x: x != 0, datas))
+        if isinstance(maps, list):
+            n_map: list = []
+            for map in maps:
+                n_map += map
+            maps = n_map
         return maps
     else:
         raise BadTime()
 
 def canAssign(class_num, seat_num, time):
+    print(getExtensionMaps(class_num, time))
     return seat_num in getExtensionMaps(class_num, time)
 
 # 연장을 신청하는 메소드. class_num, seat_num 값을 필요로 합니다.

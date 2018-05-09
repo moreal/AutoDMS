@@ -1,0 +1,5 @@
+cron:
+- description: "Auto DMS Extention"
+  url: /auto/dms/extend
+  schedule: every day 17:35
+  timezone: Asia/Seoul
