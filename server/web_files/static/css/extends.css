@@ -35,7 +35,7 @@ form {
     color: white;
 }
 
-input[type=text], input[type=password], button {
+input[type=text], input[type=password], button, select {
     font-size: 1.2vmin;
     width: 70%;
     margin: 2% 15%; 
@@ -45,10 +45,14 @@ input[type=text], input[type=password], button {
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
     border: none;
 
-    text-align: center;
+    text-align-last: center;
     
     font-family: 'Noto Sans KR', sans-serif;
     resize: none;
+}
+
+select {
+    width: 75%;
 }
 
 input[type=check] {

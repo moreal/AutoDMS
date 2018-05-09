@@ -14,7 +14,19 @@
       <form action="/api/register/extend" method="POST">
         <input name="id" type="text" placeholder="아이디" required>
         <input name="pw" type="password" placeholder="비밀번호" required>
-        <input name="class_num" type="text" placeholder="자습실" required>
+
+        <select name="class_num">
+          <option value="1">가온실</option>
+          <option value="2">나온실</option>
+          <option value="3">다온실</option>
+          <option value="4">라온실</option>
+          <option value="5">3층 독서실</option>
+          <option value="6">4층 독서실</option>
+          <option value="7">5층 독서실</option>
+          <option value="8">2층 여자 독서실</option>
+        </select>
+
+        <!-- <input name="class_num" type="text" placeholder="자습실" required> -->
         <input name="seat_num" type="text" placeholder="자리번호" required>
         
         <div id="checkbox">
