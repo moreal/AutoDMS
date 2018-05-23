@@ -2,9 +2,9 @@ from flask import request, Blueprint
 from flask import render_template, redirect
 from flask_restful import Api, Resource
 
-api = Api(Blueprint(__name__, __name__, url_prefix='/api/register'))
+api = Api(Blueprint(__name__, __name__, url_prefix='/api/extend'))
 
-@api.resource('/extend')
+@api.resource('/register')
 class Register(Resource):
     def post(self):
         # Extract form variables
