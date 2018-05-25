@@ -22,7 +22,7 @@ app = Flask(__name__)
 @app.route('/auto/dms/extend')
 def extend():
     import requests
-    resp = requests.post('http://35.231.14.247:5000/api/extend/apply')
+    resp = requests.post('http://35.237.15.224:5000/api/extend/apply')
     return resp.text, resp.status_code
     
 @app.errorhandler(500)
