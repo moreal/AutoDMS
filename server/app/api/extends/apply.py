@@ -25,17 +25,17 @@ def apply():
         if extend_eleven:
             print('eleven', id, room, seat)
             if not applyExtension(id, pw, room, seat, time=11):
-                randomExtend(id, pw, room, time)
+                randomExtend(id, pw, room, 11)
         
         if extend_twelve:
             print('twelve', id, room, seat)
             if not applyExtension(id, pw, room, seat, time=12):
-                randomExtend(id, pw, room, time)
+                randomExtend(id, pw, room, 12)
 
     return "End", 200
 
 @api.resource('/apply')
-class Register(Resource):
+class Apply(Resource):
     def post(self):
         _thread.start_new_thread(apply, ())
         return "End", 200
