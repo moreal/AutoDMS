@@ -4,7 +4,9 @@ from flask_restful import Api, Resource
 
 import _thread
 
+
 api = Api(Blueprint(__name__, __name__, url_prefix='/api/extend'))
+
 
 def apply():
     from api.dms import applyExtension, randomExtend
@@ -33,6 +35,7 @@ def apply():
                 randomExtend(id, pw, room, 12)
 
     return "End", 200
+
 
 @api.resource('/apply')
 class Apply(Resource):

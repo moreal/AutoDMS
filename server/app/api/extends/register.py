@@ -2,7 +2,9 @@ from flask import request, Blueprint
 from flask import render_template, redirect
 from flask_restful import Api, Resource
 
+
 api = Api(Blueprint(__name__, __name__, url_prefix='/api/extend'))
+
 
 @api.resource('/register')
 class Register(Resource):
@@ -14,7 +16,9 @@ class Register(Resource):
         # Check isRight Id and Pw
         import requests
         
-        resp = requests.post("http://dms.istruly.sexy/auth", data={"id": id, "pw": pw})
+        resp = requests.post(
+            "http://dms.istruly.sexy/auth",
+            data={"id": id, "pw": pw})
 
         if resp.status_code is not 200:
             return "Wrong Id, Password", 403
@@ -22,8 +26,10 @@ class Register(Resource):
         class_num = int(request.form['class_num'])
         seat_num = int(request.form['seat_num'])
 
-        extend_eleven = request.form['eleven'] if 'eleven' in request.form else None
-        extend_twelve = request.form['twelve'] if 'twelve' in request.form else None
+        extend_eleven =\
+            request.form['eleven'] if 'eleven' in request.form else None
+        extend_twelve =\
+            request.form['twelve'] if 'twelve' in request.form else None
 
         print(extend_eleven, extend_twelve)
 
@@ -47,7 +53,7 @@ class Register(Resource):
             query.add_filter('room', '=', class_num)
             query.add_filter(prop, '=', True)
             rows = list(query.fetch())
-            return len(list(filter(lambda row: row['id'] != id, rows))) is not 0
+            return len(list(filter(lambda row: row['id'] != id, rows))) != 0
 
         if extend_eleven == "on":
             if isDuplicate('extend_eleven'):
